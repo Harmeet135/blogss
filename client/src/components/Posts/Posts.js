@@ -8,7 +8,8 @@ const Posts = ({ setcurrentId }) => {
   return (
     <div style={{ display: "flex", flexWrap: "wrap", columnGap: "8rem", rowGap: "3rem", marginTop: "5rem", marginLeft: "4rem", marginRight: "4rem" }}>
       {!posts.length ? (
-        <h1>Nothing to Display</h1>
+        // <h1>Nothing to Display</h1>
+        <h1>Loading data (might take few seconds)</h1>
       ) : (
         posts.map((post) => (
           <Singlepost key={post._id} post={post} setcurrentId={setcurrentId} />
