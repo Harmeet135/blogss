@@ -29,32 +29,33 @@ const PostDetails = ({ setcurrentId }) => {
   }, [dispatch, id]);
 
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-      <Card className="mb-3 shadow" style={{ minWidth: '65rem' }}>
-        <div style={{ display: 'flex' }}>
-          <div className=''>
-            <img variant="top" height="500px" src={post.selectedFile} style={{ objectFit: 'fill', maxWidth: "35rem" }} />
-          </div>
-          <div style={{ flex: 1 }}>
-            <Card.Body>
-              <Card.Title className="h">{post.title}</Card.Title>
-              <Card.Text className="p">{post.message}</Card.Text>
-            </Card.Body>
-          </div>
+    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+    <Card className="mb-3 shadow" style={{ minWidth: '20rem', maxWidth: "75%" }}>
+      <div className="row">
+        <div className="col-md-6">
+          <img className="img-fluid" src={post.selectedFile} alt={post.title} />
         </div>
-        <Card.Footer className="text-center">
-          <div className="d-flex justify-content-between">
-            <Button variant="primary" onClick={handleDelete}>
-              <AiFillDelete />
-            </Button>
-            <Button variant="primary" onClick={handleEdit}>
-              <AiFillEdit />
-            </Button>
-          </div>
-        </Card.Footer>
-      </Card>
-    </div>
-  )
+        <div className="col-md-6">
+          <Card.Body>
+            <Card.Title className="h">{post.title}</Card.Title>
+            <Card.Text className="p">{post.message}</Card.Text>
+          </Card.Body>
+        </div>
+      </div>
+      <Card.Footer className="text-center">
+        <div className="d-flex justify-content-between">
+          <Button variant="primary" onClick={handleDelete}>
+            <AiFillDelete />
+          </Button>
+          <Button variant="primary" onClick={handleEdit}>
+            <AiFillEdit />
+          </Button>
+        </div>
+      </Card.Footer>
+    </Card>
+  </div>
+)
 }
+ 
 
 export default PostDetails;
